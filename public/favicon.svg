@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Spokane Myofunctional Therapy">
+  <rect width="64" height="64" rx="12" fill="#530ea6"/>
+  <path d="M15 22c4-5 10-8 17-8 8 0 14 3 18 9" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M14 43c6 5 13 7 21 5 7-2 12-6 15-12" fill="none" stroke="#8cc63f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M23 31h18" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+</svg>

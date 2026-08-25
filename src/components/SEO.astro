@@ -1,0 +1,44 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical = Astro.url.pathname } = Astro.props;
+const pageTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
+const canonicalUrl = new URL(canonical, site.url).toString();
+const imageUrl = new URL(site.socialImage, site.url).toString();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  image: new URL(site.logo, site.url).toString(),
+  areaServed: site.serviceArea,
+  email: site.email,
+  telephone: site.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    addressCountry: site.address.country,
+  },
+  medicalSpecialty: "Orofacial Myofunctional Therapy",
+};
+---
+
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

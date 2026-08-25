@@ -1,0 +1,35 @@
+---
+import SEO from "../components/SEO.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#620674" />
+    <SEO title={title} description={description} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to Main Content</a>
+    <header class="site-header">
+      <img class="site-logo" src="/images/spokane-myo-logo.png" alt="Spokane Myofunctional Therapy" />
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>Spokane Myofunctional Therapy</p>
+      <p><a href="tel:5093626267">509-362-6267</a></p>
+      <p><a href="https://www.facebook.com/spokanemyofunctionaltherapy">Facebook</a></p>
+    </footer>
+  </body>
+</html>
