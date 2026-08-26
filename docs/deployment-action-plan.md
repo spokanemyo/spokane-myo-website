@@ -92,15 +92,17 @@ Security gate:
 
 ## Phase 6: Safe Change Workflow
 
-Standard workflow:
+Test automation workflow:
 
 - [ ] Change request is written as a GitHub issue or Discord request.
-- [ ] A branch is created from `test`.
-- [ ] Changes are committed to the branch.
-- [ ] A pull request is opened into `test`.
-- [ ] Cloudflare creates a preview URL.
-- [ ] The preview is reviewed.
-- [ ] Approved changes merge into `test`.
+- [x] A repository-scoped GitHub App provides a separate automation identity.
+- [ ] The automation commits approved test changes directly to `test`.
+- [ ] GitHub Actions builds the pushed commit.
+- [ ] Cloudflare deploys a successful build to `test.spokanemyo.com`.
+- [ ] The test deployment is reviewed.
+
+Production promotion workflow:
+
 - [ ] Final approved changes merge from `test` into `main`.
 - [ ] Cloudflare deploys production.
 
@@ -109,6 +111,8 @@ Security gate:
 - [ ] No AI or bot can push directly to `main`.
 - [ ] No AI or bot can deploy directly to production.
 - [ ] Human approval is required before merging to `main`.
+- [x] Test automation has no GitHub administration, DNS, or Cloudflare permissions.
+- [x] Test automation cannot force-push or delete the `test` branch.
 
 ## Phase 7: Discord, Hermes, And OpenClaw
 

@@ -18,6 +18,10 @@ pnpm-debug.log*
 .env
 .env.*
 
+# credentials and local secret material
+*.pem
+.secrets/
+
 # system files
 .DS_Store
 Thumbs.db
