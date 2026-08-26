@@ -83,6 +83,66 @@ a {
   outline-offset: 3px;
 }
 
+.concept-links {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 1rem auto 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border-left: 0.65rem solid var(--bright-green);
+  background: var(--paper);
+  text-align: center;
+}
+
+.concept-links__kicker {
+  margin: 0 0 0.25rem;
+  color: var(--purple);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.concept-links h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  font-weight: 400;
+}
+
+.concept-links > p:not(.concept-links__kicker) {
+  margin: 0.5rem auto 1.25rem;
+}
+
+.concept-links__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.concept-links__buttons a {
+  display: grid;
+  align-content: center;
+  min-height: 76px;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--purple);
+  border-radius: 0.75rem;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.concept-links__buttons a:hover,
+.concept-links__buttons a:focus-visible {
+  background: var(--purple);
+  color: var(--paper);
+}
+
+.concept-links__buttons a:focus-visible {
+  outline: 3px solid var(--bright-green);
+  outline-offset: 3px;
+}
+
+.concept-links__buttons span {
+  font-size: 0.9rem;
+}
+
 .intro-section,
 .content-section,
 .image-row,
@@ -243,6 +303,10 @@ a {
   .patient-portal-link {
     grid-column: 1;
     justify-self: center;
+  }
+
+  .concept-links__buttons {
+    grid-template-columns: 1fr;
   }
 
   .intro-section,
