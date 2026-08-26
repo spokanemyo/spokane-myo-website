@@ -1,5 +1,6 @@
 ---
 import SEO from "../components/SEO.astro";
+import { site } from "../data/site";
 import "../styles/global.css";
 
 interface Props {
@@ -23,6 +24,7 @@ const { title, description } = Astro.props;
     <a class="skip-link" href="#main">Skip to Main Content</a>
     <header class="site-header">
       <img class="site-logo" src="/images/spokane-myo-logo.png" alt="Spokane Myofunctional Therapy" />
+      <a class="patient-portal-link" href={site.janeUrl}>Patient Portal</a>
     </header>
     <main id="main">
       <slot />

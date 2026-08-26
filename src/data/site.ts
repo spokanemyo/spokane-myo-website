@@ -4,7 +4,7 @@ export const site = {
   providerTitle: "Orofacial Myofunctional Therapist",
   domain: "spokanemyo.com",
   url: "https://spokanemyo.com",
-  janeUrl: "https://spokanemyo.janeapp.com",
+  janeUrl: "https://spokanemyo.janeapp.com/login",
   description:
     "Orofacial myofunctional therapy education and support for children, teens, and adults in Spokane, WA and the surrounding area.",
   serviceArea: "Spokane, WA and surrounding communities",

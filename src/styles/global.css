@@ -39,6 +39,10 @@ a {
 }
 
 .site-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
   max-width: 1180px;
   margin: 0 auto;
   padding: 2rem 1rem 1rem;
@@ -46,8 +50,37 @@ a {
 }
 
 .site-logo {
+  grid-column: 2;
   width: min(620px, 100%);
   height: auto;
+}
+
+.patient-portal-link {
+  grid-column: 3;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1.1rem;
+  border: 2px solid var(--purple);
+  border-radius: 999px;
+  background: var(--purple);
+  color: var(--paper);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.patient-portal-link:hover {
+  border-color: #4e055d;
+  background: #4e055d;
+}
+
+.patient-portal-link:focus-visible {
+  outline: 3px solid var(--bright-green);
+  outline-offset: 3px;
 }
 
 .intro-section,
@@ -201,6 +234,17 @@ a {
 }
 
 @media (max-width: 760px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    padding-top: 1.25rem;
+  }
+
+  .site-logo,
+  .patient-portal-link {
+    grid-column: 1;
+    justify-self: center;
+  }
+
   .intro-section,
   .profile-summary,
   .image-row {
