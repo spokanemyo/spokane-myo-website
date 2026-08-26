@@ -1,0 +1,239 @@
+---
+interface Props {
+  variant: "balanced" | "framed" | "alternating";
+}
+
+const { variant } = Astro.props;
+
+const groups = [
+  {
+    title: "Littles",
+    image: "/images/dandelion.jpg",
+    alt: "Dandelion leaves",
+    description:
+      "Young children over 3 or 4 can benefit from orofacial myofunctional therapy to increase oral motor skills for speech and feeding, improve sensory integration and normalize oral posture and nasal breathing and to help develop the orofacial and airway complex. This is a great time to eliminate binky and thumb sucking to prevent poor oral development and malocclusion. The focus is growth and prevention. We have loads of fun making music and playing oral motor games.",
+    redFlagsHeading: "Red Flags for this age:",
+    redFlags: [
+      "Oral sensory seeking or avoidance",
+      "Finger, thumb or binkie sucking",
+      "Picky eating",
+      "Chipmunking food in cheeks or spitting out food",
+      "Taking a long time to eat",
+      "Tummy aches, excessive gagging or drooling",
+      "Poor sleep, bruxism, snoring or mouth breathing",
+      "Chronic nasal congestion, high palate or crowded teeth",
+      "Dental wear, tongue tie or large tonsils",
+    ],
+  },
+  {
+    title: "Kiddos",
+    image: "/images/bee.jpg",
+    alt: "Bumblebee on purple flowers",
+    description:
+      "After 5, kids are still growing a lot. They are continuing to develop speech and start losing baby teeth. Often, they may still present with a tongue thrust or low tongue posture. This can negatively affect speech, facial and airway development. Tongue and lip restrictions or chronic nasal congestion may be a root cause.",
+    redFlagsHeading: "Red Flags for ages 5-18 years",
+    redFlags: [
+      "Crowded or misaligned teeth",
+      "Maxillary expansion, dental wear or broken teeth",
+      "Excessive cavities or gingivitis",
+      "Finger sucking or oral sensory concerns",
+      "Tongue tie, large tonsils or chronic nasal congestion",
+      "Speech-articulation, mumbling, mouth breathing and snoring",
+      "Bruxism, bedwetting, problems with focus or attention",
+      "Picky eating, tummy aches, facial pain or headaches",
+    ],
+  },
+  {
+    title: "Adults",
+    image: "/images/lilac.jpg",
+    alt: "Lilac flowers",
+    description:
+      "Adults that benefit from OMT have had oral dysfunction and poor breathing for years, unknowingly. They often complain of poor sleep, sleep disordered breathing, craniofacial pain, headaches, migraines, orthodontic relapse, clenching and grinding, poor immune function and cognition, overall muscular tension, poor posture, limited mobility and cervical spine instability.",
+    redFlagsHeading: "Red Flags for Adults:",
+    redFlags: [
+      "Shifting teeth or orthodontic stability concerns",
+      "Gum recession, gingivitis, dental wear or broken teeth",
+      "Bruxism, clenching or grinding",
+      "Facial pain, headaches, neck pain or TMJ pain",
+      "Popping or clicking joints, limited opening",
+      "Fatigue talking, mumbling or difficulty swallowing",
+      "Nasal congestion, poor sleep, fatigue or brain fog",
+      "Mouth breathing, dry mouth, snoring or apnea",
+      "Tongue tie or orthognathic surgery",
+    ],
+  },
+];
+---
+
+<section class:list={["age-concept", `age-concept--${variant}`]} aria-label="Age group services">
+  {
+    groups.map((group) => (
+      <article class="age-card">
+        <figure class="age-card__visual">
+          <img src={group.image} alt={group.alt} />
+        </figure>
+        <div class="age-card__content">
+          <h2>{group.title}</h2>
+          <p>{group.description}</p>
+          <h3>{group.redFlagsHeading}</h3>
+          <ul>
+            {group.redFlags.map((redFlag) => <li>{redFlag}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  .age-concept {
+    display: grid;
+    gap: 2rem;
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto 2rem;
+  }
+
+  .age-card {
+    overflow: hidden;
+    background: var(--paper);
+    border-top: 0.4rem solid var(--bright-green);
+  }
+
+  .age-card__visual {
+    margin: 0;
+  }
+
+  .age-card__visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .age-card__content {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  h2 {
+    margin: 0 0 0.75rem;
+    color: var(--purple);
+    font-weight: 400;
+  }
+
+  h3 {
+    color: #d92f2f;
+    font-size: 1rem;
+  }
+
+  ul {
+    columns: 2;
+    gap: 2rem;
+    padding-left: 1.2rem;
+  }
+
+  .age-concept--balanced .age-card {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.68fr) minmax(0, 1.45fr);
+  }
+
+  .age-concept--balanced .age-card__visual img {
+    min-height: 100%;
+  }
+
+  .age-concept--framed .age-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .age-concept--framed .age-card__visual {
+    align-self: start;
+    padding: 0.55rem;
+    background: #f1e7f3;
+    box-shadow: 0 0.7rem 1.8rem rgba(49, 26, 53, 0.16);
+    transform: rotate(-1deg);
+  }
+
+  .age-concept--framed .age-card__visual img {
+    aspect-ratio: 0.9;
+  }
+
+  .age-concept--framed .age-card:nth-child(even) .age-card__visual {
+    transform: rotate(1deg);
+  }
+
+  .age-concept--framed .age-card__content {
+    padding: 0;
+  }
+
+  .age-concept--alternating .age-card {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+    box-shadow: 0 0.8rem 2rem rgba(49, 26, 53, 0.1);
+  }
+
+  .age-concept--alternating .age-card:nth-child(even) {
+    grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+  }
+
+  .age-concept--alternating .age-card:nth-child(even) .age-card__visual {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .age-concept--alternating .age-card:nth-child(even) .age-card__content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .age-concept--alternating .age-card__visual img {
+    min-height: 100%;
+  }
+
+  @media (max-width: 760px) {
+    .age-concept--balanced .age-card,
+    .age-concept--framed .age-card,
+    .age-concept--alternating .age-card,
+    .age-concept--alternating .age-card:nth-child(even) {
+      grid-template-columns: 1fr;
+    }
+
+    .age-concept--framed .age-card {
+      gap: 1.5rem;
+    }
+
+    .age-concept--framed .age-card__visual {
+      width: min(100%, 340px);
+      justify-self: center;
+      transform: none;
+    }
+
+    .age-concept--framed .age-card:nth-child(even) .age-card__visual {
+      transform: none;
+    }
+
+    .age-concept--alternating .age-card:nth-child(even) .age-card__visual,
+    .age-concept--alternating .age-card:nth-child(even) .age-card__content {
+      grid-column: 1;
+    }
+
+    .age-concept--alternating .age-card:nth-child(even) .age-card__visual {
+      grid-row: 1;
+    }
+
+    .age-concept--alternating .age-card:nth-child(even) .age-card__content {
+      grid-row: 2;
+    }
+
+    .age-concept--balanced .age-card__visual img,
+    .age-concept--alternating .age-card__visual img {
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+    }
+
+    ul {
+      columns: 1;
+    }
+  }
+</style>
