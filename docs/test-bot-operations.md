@@ -7,8 +7,9 @@
 - The GitHub App is owned by the `spokanemyo` organization.
 - It is installed only on `spokanemyo/spokane-myo-website`.
 - Its repository permissions are Contents: read/write and Metadata: read.
-- It has no organization, administration, pull request, workflow, secret, DNS, or Cloudflare permissions.
+- It has no organization, administration, workflow, secret, DNS, or Cloudflare permissions.
 - It is not on the `main` ruleset bypass list and cannot push to production.
+- It cannot access or initiate the protected production promotion workflow.
 
 ## Test workflow
 
@@ -33,3 +34,6 @@ The `test` ruleset permits direct pushes but continues to block force pushes and
 - To immediately stop automation, suspend or uninstall `SpokaneMyo Test Bot` in the organization GitHub App settings.
 - To rotate credentials, generate a replacement private key, update the protected local copy and 1Password backup, verify a test push, and then delete the old key in GitHub.
 - Never add this app to the `main` ruleset bypass list.
+
+Production promotion uses a different, human-gated identity. See
+`docs/production-promotion.md`.
