@@ -181,6 +181,10 @@ a {
   margin-inline: auto;
 }
 
+.quote-section h2 span {
+  display: block;
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;

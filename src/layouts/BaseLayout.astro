@@ -24,7 +24,15 @@ const { title, description } = Astro.props;
     <a class="skip-link" href="#main">Skip to Main Content</a>
     <header class="site-header">
       <img class="site-logo" src="/images/spokane-myo-logo.png" alt="Spokane Myofunctional Therapy" />
-      <a class="patient-portal-link" href={site.janeUrl}>Patient Portal</a>
+      <a
+        class="patient-portal-link"
+        href={site.janeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Patient Portal (opens in a new window)"
+      >
+        Patient Portal
+      </a>
     </header>
     <main id="main">
       <slot />
