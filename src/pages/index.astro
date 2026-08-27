@@ -1,4 +1,5 @@
 ---
+import AgeLayoutConcept from "../components/AgeLayoutConcept.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -6,26 +7,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Home | Spokane Myofunctional Therapy"
   description="Spokane Myofunctional Therapy with Tamara Anderson, orofacial myofunctional therapist since 2016."
 >
-  <section class="concept-links" aria-labelledby="concept-links-heading">
-    <p class="concept-links__kicker">TEMPORARY DESIGN REVIEW</p>
-    <h1 id="concept-links-heading">Choose an age-section layout</h1>
-    <p>Open each concept below, then let us know which one feels closest to the final design.</p>
-    <div class="concept-links__buttons">
-      <a href="/concepts/balanced/">
-        <strong>Concept 1</strong>
-        <span>Balanced image-left cards</span>
-      </a>
-      <a href="/concepts/framed/">
-        <strong>Concept 2</strong>
-        <span>Framed image insets</span>
-      </a>
-      <a href="/concepts/alternating/">
-        <strong>Concept 3</strong>
-        <span>Alternating editorial cards</span>
-      </a>
-    </div>
-  </section>
-
   <section class="intro-section">
     <div class="profile-summary">
       <img src="/images/tamara-anderson.jpg" alt="Tamara Anderson" />
@@ -109,78 +90,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="image-row" aria-label="Nature images">
-    <img src="/images/dandelion.jpg" alt="Dandelion leaves" />
-    <img src="/images/bee.jpg" alt="Bee on purple flowers" />
-    <img src="/images/lilac.jpg" alt="Lilac flowers" />
-  </section>
-
-  <section class="content-section age-section">
-    <article>
-      <h2>Littles</h2>
-      <p>
-        Young children over 3 or 4 can benefit from orofacial myofunctional therapy to increase oral motor skills for
-        speech and feeding, improve sensory integration and normalize oral posture and nasal breathing and to help
-        develop the orofacial and airway complex. This is a great time to eliminate binky and thumb sucking to prevent
-        poor oral development and malocclusion. The focus is growth and prevention. We have loads of fun making music
-        and playing oral motor games.
-      </p>
-      <h3>Red Flags for this age:</h3>
-      <ul>
-        <li>Oral sensory seeking or avoidance</li>
-        <li>Finger, thumb or binkie sucking</li>
-        <li>Picky eating</li>
-        <li>Chipmunking food in cheeks or spitting out food</li>
-        <li>Taking a long time to eat</li>
-        <li>Tummy aches, excessive gagging or drooling</li>
-        <li>Poor sleep, bruxism, snoring or mouth breathing</li>
-        <li>Chronic nasal congestion, high palate or crowded teeth</li>
-        <li>Dental wear, tongue tie or large tonsils</li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>Kiddos</h2>
-      <p>
-        After 5, kids are still growing a lot. They are continuing to develop speech and start losing baby teeth. Often,
-        they may still present with a tongue thrust or low tongue posture. This can negatively affect speech, facial and
-        airway development. Tongue and lip restrictions or chronic nasal congestion may be a root cause.
-      </p>
-      <h3>Red Flags for ages 5-18 years</h3>
-      <ul>
-        <li>Crowded or misaligned teeth</li>
-        <li>Maxillary expansion, dental wear or broken teeth</li>
-        <li>Excessive cavities or gingivitis</li>
-        <li>Finger sucking or oral sensory concerns</li>
-        <li>Tongue tie, large tonsils or chronic nasal congestion</li>
-        <li>Speech-articulation, mumbling, mouth breathing and snoring</li>
-        <li>Bruxism, bedwetting, problems with focus or attention</li>
-        <li>Picky eating, tummy aches, facial pain or headaches</li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>Adults</h2>
-      <p>
-        Adults that benefit from OMT have had oral dysfunction and poor breathing for years, unknowingly. They often
-        complain of poor sleep, sleep disordered breathing, craniofacial pain, headaches, migraines, orthodontic relapse,
-        clenching and grinding, poor immune function and cognition, overall muscular tension, poor posture, limited
-        mobility and cervical spine instability.
-      </p>
-      <h3>Red Flags for Adults:</h3>
-      <ul>
-        <li>Shifting teeth or orthodontic stability concerns</li>
-        <li>Gum recession, gingivitis, dental wear or broken teeth</li>
-        <li>Bruxism, clenching or grinding</li>
-        <li>Facial pain, headaches, neck pain or TMJ pain</li>
-        <li>Popping or clicking joints, limited opening</li>
-        <li>Fatigue talking, mumbling or difficulty swallowing</li>
-        <li>Nasal congestion, poor sleep, fatigue or brain fog</li>
-        <li>Mouth breathing, dry mouth, snoring or apnea</li>
-        <li>Tongue tie or orthognathic surgery</li>
-      </ul>
-    </article>
-  </section>
+  <AgeLayoutConcept />
 
   <section class="quote-section">
     <h2>"The Spirit of God has made me, and the breath of the Almighty gives me life."</h2>

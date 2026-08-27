@@ -1,10 +1,4 @@
 ---
-interface Props {
-  variant: "balanced" | "framed" | "alternating";
-}
-
-const { variant } = Astro.props;
-
 const groups = [
   {
     title: "Littles",
@@ -65,7 +59,7 @@ const groups = [
 ];
 ---
 
-<section class:list={["age-concept", `age-concept--${variant}`]} aria-label="Age group services">
+<section class="age-concept" aria-label="Age group services">
   {
     groups.map((group) => (
       <article class="age-card">
@@ -130,103 +124,50 @@ const groups = [
     padding-left: 1.2rem;
   }
 
-  .age-concept--balanced .age-card {
-    display: grid;
-    grid-template-columns: minmax(250px, 0.68fr) minmax(0, 1.45fr);
-  }
-
-  .age-concept--balanced .age-card__visual img {
-    min-height: 100%;
-  }
-
-  .age-concept--framed .age-card {
-    display: grid;
-    grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
-    gap: clamp(1.5rem, 4vw, 3rem);
-    padding: clamp(1.25rem, 3vw, 2rem);
-  }
-
-  .age-concept--framed .age-card__visual {
-    align-self: start;
-    padding: 0.55rem;
-    background: #f1e7f3;
-    box-shadow: 0 0.7rem 1.8rem rgba(49, 26, 53, 0.16);
-    transform: rotate(-1deg);
-  }
-
-  .age-concept--framed .age-card__visual img {
-    aspect-ratio: 0.9;
-  }
-
-  .age-concept--framed .age-card:nth-child(even) .age-card__visual {
-    transform: rotate(1deg);
-  }
-
-  .age-concept--framed .age-card__content {
-    padding: 0;
-  }
-
-  .age-concept--alternating .age-card {
+  .age-card {
     display: grid;
     grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
     box-shadow: 0 0.8rem 2rem rgba(49, 26, 53, 0.1);
   }
 
-  .age-concept--alternating .age-card:nth-child(even) {
+  .age-card:nth-child(even) {
     grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
   }
 
-  .age-concept--alternating .age-card:nth-child(even) .age-card__visual {
+  .age-card:nth-child(even) .age-card__visual {
     grid-column: 2;
     grid-row: 1;
   }
 
-  .age-concept--alternating .age-card:nth-child(even) .age-card__content {
+  .age-card:nth-child(even) .age-card__content {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .age-concept--alternating .age-card__visual img {
+  .age-card__visual img {
     min-height: 100%;
   }
 
   @media (max-width: 760px) {
-    .age-concept--balanced .age-card,
-    .age-concept--framed .age-card,
-    .age-concept--alternating .age-card,
-    .age-concept--alternating .age-card:nth-child(even) {
+    .age-card,
+    .age-card:nth-child(even) {
       grid-template-columns: 1fr;
     }
 
-    .age-concept--framed .age-card {
-      gap: 1.5rem;
-    }
-
-    .age-concept--framed .age-card__visual {
-      width: min(100%, 340px);
-      justify-self: center;
-      transform: none;
-    }
-
-    .age-concept--framed .age-card:nth-child(even) .age-card__visual {
-      transform: none;
-    }
-
-    .age-concept--alternating .age-card:nth-child(even) .age-card__visual,
-    .age-concept--alternating .age-card:nth-child(even) .age-card__content {
+    .age-card:nth-child(even) .age-card__visual,
+    .age-card:nth-child(even) .age-card__content {
       grid-column: 1;
     }
 
-    .age-concept--alternating .age-card:nth-child(even) .age-card__visual {
+    .age-card:nth-child(even) .age-card__visual {
       grid-row: 1;
     }
 
-    .age-concept--alternating .age-card:nth-child(even) .age-card__content {
+    .age-card:nth-child(even) .age-card__content {
       grid-row: 2;
     }
 
-    .age-concept--balanced .age-card__visual img,
-    .age-concept--alternating .age-card__visual img {
+    .age-card__visual img {
       aspect-ratio: 16 / 9;
       min-height: 0;
     }
