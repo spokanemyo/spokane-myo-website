@@ -175,7 +175,7 @@ a {
 .services-carousel-shell {
   position: relative;
   width: min(1080px, calc(100% - 2rem));
-  margin: 1.25rem auto 2rem;
+  margin: 1.25rem auto 0.75rem;
 }
 
 .services-carousel {
@@ -254,8 +254,8 @@ a {
 }
 
 .quote-section {
-  margin-top: 2rem;
-  padding: clamp(2rem, 6vw, 4rem) 1rem;
+  margin-top: 0;
+  padding: 1.25rem 1rem 0.75rem;
   text-align: center;
 }
 
@@ -273,7 +273,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem 2rem;
-  padding: 2rem 1rem 3rem;
+  padding: 0.75rem 1rem 2rem;
   color: var(--muted);
 }
 
