@@ -157,10 +157,6 @@ a {
   letter-spacing: 0.08em;
 }
 
-.about-section {
-  border-left: 1rem solid var(--soft-purple);
-}
-
 .definition-section {
   background: var(--soft-purple);
 }
