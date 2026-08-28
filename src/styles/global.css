@@ -230,13 +230,14 @@ a {
   display: grid;
 }
 
-.carousel-dots {
+.carousel-position {
   display: none;
   position: absolute;
   z-index: 3;
-  top: 0.75rem;
+  top: 0.6rem;
   left: 50%;
-  gap: 0.5rem;
+  justify-items: center;
+  gap: 0.3rem;
   padding: 0.4rem 0.6rem;
   border-radius: 999px;
   background: rgba(239, 241, 242, 0.72);
@@ -244,8 +245,20 @@ a {
   backdrop-filter: blur(2px);
 }
 
-.services-carousel-shell.is-ready .carousel-dots {
+.services-carousel-shell.is-ready .carousel-position {
+  display: grid;
+}
+
+.carousel-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.carousel-dots {
   display: flex;
+  gap: 0.5rem;
 }
 
 .carousel-dots button {
