@@ -281,6 +281,11 @@ a {
   margin: 0;
 }
 
+.site-copyright {
+  flex-basis: 100%;
+  text-align: center;
+}
+
 @media (max-width: 760px) {
   .site-header {
     grid-template-columns: 1fr;

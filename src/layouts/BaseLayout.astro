@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -41,6 +42,7 @@ const { title, description } = Astro.props;
       <p>Spokane Myofunctional Therapy</p>
       <p><a href="tel:5093626267">509-362-6267</a></p>
       <p><a href="https://www.facebook.com/spokanemyofunctionaltherapy">Facebook</a></p>
+      <p class="site-copyright">© {currentYear} Spokane Myofunctional Therapy. All rights reserved.</p>
     </footer>
   </body>
 </html>
