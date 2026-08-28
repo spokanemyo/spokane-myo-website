@@ -38,59 +38,86 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="content-section about-section">
-    <div>
-      <p class="section-label">ABOUT ME</p>
-      <p>
-        Hi! I'm Tamara! I've been a dental hygienist for 20 years in private practice in Spokane and Seattle. I'm local
-        to Spokane and earned my bachelors in science in dental hygiene from Eastern Washington University in 2003. I
-        became passionate about oral development and airway health and started my journey in treating orofacial
-        myofunctional disorders in 2016 when my own child struggled with airway and speech issues.
-      </p>
-      <p>
-        I have thousands of hours completing post graduate training and treating patients clinically. I love working with
-        a variety of people and conditions and treat my patients like family. I have great relationships with local
-        providers that can assist you on your journey, and together, we will advocate for your optimum health and
-        breathing.
-      </p>
-      <p>
-        I am a member of the IAOM and an Ambassador of the Breathe Institute. I am also certified TOTS trained. At
-        Spokane Myofunctional Therapy, I see all ages and all aspects of orofacial myofunctional disorders. In person
-        therapy for children is through play--music, food and games. For adults and teens, I am happy to do a
-        combination of in person and Zoom to accommodate your busy schedule.
-      </p>
-      <p>
-        During my free time I like to stay active--play pickleball, snow ski, hike, garden and plant flowers, go to
-        community events and sporting games, volunteer and travel. I love spending time with my family and animals. I
-        consider myself a lifelong learner and improving myself.
-      </p>
+  <div class="services-carousel-shell" data-carousel-shell>
+    <div class="carousel-toolbar" data-carousel-controls>
+      <button class="carousel-arrow" type="button" data-carousel-previous>← Previous</button>
+      <div class="carousel-position">
+        <p class="carousel-status" aria-live="polite">
+          <span data-carousel-current>1</span> of 5
+        </p>
+        <div class="carousel-dots" aria-label="Choose an information card">
+          <button type="button" data-carousel-dot="0" aria-label="Show About Me" aria-current="true"></button>
+          <button type="button" data-carousel-dot="1" aria-label="Show What is OMT"></button>
+          <button type="button" data-carousel-dot="2" aria-label="Show Littles"></button>
+          <button type="button" data-carousel-dot="3" aria-label="Show Kiddos"></button>
+          <button type="button" data-carousel-dot="4" aria-label="Show Adults"></button>
+        </div>
+      </div>
+      <button class="carousel-arrow" type="button" data-carousel-next>Next →</button>
     </div>
-  </section>
 
-  <section class="content-section definition-section">
-    <div>
-      <h2>What is Orofacial Myofunctional Therapy (OMT)?</h2>
-      <p>
-        Orofacial Myofunctional Therapy (OMT) is a short term, non-invasive, individualized program that restores
-        orofacial muscle function and nasal breathing. Finding the root cause of oral dysfunction is imperative to
-        treatment whether it be oral restrictions, such as a tongue tie, airway obstruction, oral habits or
-        developmental.
-      </p>
-      <p>
-        OMT is a collaborative treatment for orofacial and airway growth, speech, feeding, orthodontic treatment and
-        mouth breathing and airway maintenance in children. In adults, OMT addresses orofacial balance, stability of
-        dentition, managing sleep disordered breathing and craniofacial pain and contributing individual habits.
-      </p>
-      <p>
-        Signs and symptoms of orofacial myofunctional disorders vary in individuals such as tongue thrust, low tongue
-        posture, forward swallow, low facial tone, jaw instability, tongue tie, chronic mouth breathing, chronic nasal
-        congestion, crooked teeth, orthodontic relapse, TMD/TMJ, bruxism, problems chewing, swallowing, digestion, poor
-        articulation, forward head and shoulder posture, snoring, mouth breathing and obstructive sleep apnea.
-      </p>
+    <div
+      class="services-carousel"
+      data-card-carousel
+      role="region"
+      aria-label="Information and services cards"
+      tabindex="0"
+    >
+      <section class="content-section about-section swipe-card" data-carousel-card data-card-title="About Me">
+        <div>
+          <h2 class="section-label">ABOUT ME</h2>
+          <p>
+            Hi! I'm Tamara! I've been a dental hygienist for 20 years in private practice in Spokane and Seattle. I'm local
+            to Spokane and earned my bachelors in science in dental hygiene from Eastern Washington University in 2003. I
+            became passionate about oral development and airway health and started my journey in treating orofacial
+            myofunctional disorders in 2016 when my own child struggled with airway and speech issues.
+          </p>
+          <p>
+            I have thousands of hours completing post graduate training and treating patients clinically. I love working
+            with a variety of people and conditions and treat my patients like family. I have great relationships with local
+            providers that can assist you on your journey, and together, we will advocate for your optimum health and
+            breathing.
+          </p>
+          <p>
+            I am a member of the IAOM and an Ambassador of the Breathe Institute. I am also certified TOTS trained. At
+            Spokane Myofunctional Therapy, I see all ages and all aspects of orofacial myofunctional disorders. In person
+            therapy for children is through play--music, food and games. For adults and teens, I am happy to do a
+            combination of in person and Zoom to accommodate your busy schedule.
+          </p>
+          <p>
+            During my free time I like to stay active--play pickleball, snow ski, hike, garden and plant flowers, go to
+            community events and sporting games, volunteer and travel. I love spending time with my family and animals. I
+            consider myself a lifelong learner and improving myself.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section definition-section swipe-card" data-carousel-card data-card-title="What is OMT">
+        <div>
+          <h2>What is Orofacial Myofunctional Therapy (OMT)?</h2>
+          <p>
+            Orofacial Myofunctional Therapy (OMT) is a short term, non-invasive, individualized program that restores
+            orofacial muscle function and nasal breathing. Finding the root cause of oral dysfunction is imperative to
+            treatment whether it be oral restrictions, such as a tongue tie, airway obstruction, oral habits or
+            developmental.
+          </p>
+          <p>
+            OMT is a collaborative treatment for orofacial and airway growth, speech, feeding, orthodontic treatment and
+            mouth breathing and airway maintenance in children. In adults, OMT addresses orofacial balance, stability of
+            dentition, managing sleep disordered breathing and craniofacial pain and contributing individual habits.
+          </p>
+          <p>
+            Signs and symptoms of orofacial myofunctional disorders vary in individuals such as tongue thrust, low tongue
+            posture, forward swallow, low facial tone, jaw instability, tongue tie, chronic mouth breathing, chronic nasal
+            congestion, crooked teeth, orthodontic relapse, TMD/TMJ, bruxism, problems chewing, swallowing, digestion,
+            poor articulation, forward head and shoulder posture, snoring, mouth breathing and obstructive sleep apnea.
+          </p>
+        </div>
+      </section>
+
+      <AgeLayoutConcept />
     </div>
-  </section>
-
-  <AgeLayoutConcept />
+  </div>
 
   <section class="quote-section">
     <h2>
@@ -100,3 +127,67 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p>Job 33:4</p>
   </section>
 </BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-carousel-shell]").forEach((shell) => {
+    const carousel = shell.querySelector<HTMLElement>("[data-card-carousel]");
+    const cards = Array.from(shell.querySelectorAll<HTMLElement>("[data-carousel-card]"));
+    const previous = shell.querySelector<HTMLButtonElement>("[data-carousel-previous]");
+    const next = shell.querySelector<HTMLButtonElement>("[data-carousel-next]");
+    const current = shell.querySelector<HTMLElement>("[data-carousel-current]");
+    const dots = Array.from(shell.querySelectorAll<HTMLButtonElement>("[data-carousel-dot]"));
+
+    if (!carousel || !previous || !next || !current || cards.length === 0) return;
+
+    let activeIndex = 0;
+    let updateQueued = false;
+
+    const cardLeft = (card: HTMLElement) =>
+      card.getBoundingClientRect().left - carousel.getBoundingClientRect().left + carousel.scrollLeft;
+
+    const showCard = (index: number) => {
+      const boundedIndex = Math.max(0, Math.min(cards.length - 1, index));
+      carousel.scrollTo({ left: cardLeft(cards[boundedIndex]), behavior: "smooth" });
+    };
+
+    const updatePosition = () => {
+      const carouselLeft = carousel.getBoundingClientRect().left;
+      activeIndex = cards.reduce((closestIndex, card, index) => {
+        const distance = Math.abs(card.getBoundingClientRect().left - carouselLeft);
+        const closestDistance = Math.abs(cards[closestIndex].getBoundingClientRect().left - carouselLeft);
+        return distance < closestDistance ? index : closestIndex;
+      }, 0);
+
+      current.textContent = String(activeIndex + 1);
+      previous.disabled = activeIndex === 0;
+      next.disabled = activeIndex === cards.length - 1;
+      dots.forEach((dot, index) => {
+        if (index === activeIndex) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+      updateQueued = false;
+    };
+
+    previous.addEventListener("click", () => showCard(activeIndex - 1));
+    next.addEventListener("click", () => showCard(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => showCard(index)));
+    carousel.addEventListener("scroll", () => {
+      if (updateQueued) return;
+      updateQueued = true;
+      window.requestAnimationFrame(updatePosition);
+    });
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showCard(activeIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showCard(activeIndex + 1);
+      }
+    });
+
+    shell.classList.add("is-ready");
+    updatePosition();
+  });
+</script>

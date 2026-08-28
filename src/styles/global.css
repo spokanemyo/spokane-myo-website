@@ -150,7 +150,9 @@ a {
 }
 
 .section-label {
+  margin-top: 0;
   color: var(--purple);
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -168,6 +170,110 @@ a {
   margin-top: 0;
   color: var(--purple);
   font-weight: 400;
+}
+
+.services-carousel-shell {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 1.25rem auto 2rem;
+}
+
+.services-carousel {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--soft-purple) transparent;
+}
+
+.services-carousel > .swipe-card {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  box-shadow: 0 0.8rem 2rem rgba(49, 26, 53, 0.1);
+}
+
+.services-carousel .content-section {
+  width: 100%;
+  margin: 0;
+}
+
+.carousel-toolbar {
+  display: none;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.services-carousel-shell.is-ready .carousel-toolbar {
+  display: grid;
+}
+
+.carousel-arrow {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--purple);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--purple);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--purple);
+  color: var(--paper);
+}
+
+.carousel-arrow:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+.carousel-arrow:focus-visible,
+.carousel-dots button:focus-visible,
+.services-carousel:focus-visible {
+  outline: 3px solid var(--bright-green);
+  outline-offset: 3px;
+}
+
+.carousel-position {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+}
+
+.carousel-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.carousel-dots button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid var(--purple);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carousel-dots button[aria-current="true"] {
+  background: var(--purple);
 }
 
 .quote-section {
@@ -218,5 +324,14 @@ a {
   .profile-summary img {
     width: min(240px, 100%);
     height: auto;
+  }
+
+  .carousel-toolbar {
+    gap: 0.5rem;
+  }
+
+  .carousel-arrow {
+    padding-inline: 0.75rem;
+    font-size: 0.9rem;
   }
 }

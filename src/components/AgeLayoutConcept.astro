@@ -59,34 +59,25 @@ const groups = [
 ];
 ---
 
-<section class="age-concept" aria-label="Age group services">
-  {
-    groups.map((group) => (
-      <article class="age-card">
-        <figure class="age-card__visual">
-          <img src={group.image} alt={group.alt} />
-        </figure>
-        <div class="age-card__content">
-          <h2>{group.title}</h2>
-          <p>{group.description}</p>
-          <h3>{group.redFlagsHeading}</h3>
-          <ul>
-            {group.redFlags.map((redFlag) => <li>{redFlag}</li>)}
-          </ul>
-        </div>
-      </article>
-    ))
-  }
-</section>
+{
+  groups.map((group) => (
+    <article class="age-card swipe-card" data-carousel-card data-card-title={group.title}>
+      <figure class="age-card__visual">
+        <img src={group.image} alt={group.alt} />
+      </figure>
+      <div class="age-card__content">
+        <h2>{group.title}</h2>
+        <p>{group.description}</p>
+        <h3>{group.redFlagsHeading}</h3>
+        <ul>
+          {group.redFlags.map((redFlag) => <li>{redFlag}</li>)}
+        </ul>
+      </div>
+    </article>
+  ))
+}
 
 <style>
-  .age-concept {
-    display: grid;
-    gap: 2rem;
-    width: min(1080px, calc(100% - 2rem));
-    margin: 2rem auto;
-  }
-
   .age-card {
     overflow: hidden;
     background: var(--paper);
