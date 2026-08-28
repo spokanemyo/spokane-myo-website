@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -38,9 +39,33 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <footer class="site-footer">
-      <p>Spokane Myofunctional Therapy</p>
       <p><a href="tel:5093626267">509-362-6267</a></p>
-      <p><a href="https://www.facebook.com/spokanemyofunctionaltherapy">Facebook</a></p>
+      <p class="footer-social-links">
+        <a
+          class="footer-social-link footer-facebook-link"
+          href="https://www.facebook.com/spokanemyofunctionaltherapy"
+          aria-label="Spokane Myofunctional Therapy on Facebook"
+        >
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M16 8.05A8 8 0 1 0 6.75 16v-5.63H4.72V8.05h2.03V6.27c0-2.02 1.2-3.14 3.04-3.14.88 0 1.8.16 1.8.16v2h-1.03c-1 0-1.31.62-1.31 1.25v1.51h2.23l-.36 2.32H9.25V16A8 8 0 0 0 16 8.05Z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          class="footer-social-link footer-instagram-link"
+          href="https://www.instagram.com/spokane_myofunctional_therapy"
+          aria-label="Spokane Myofunctional Therapy on Instagram"
+        >
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <rect x="1.25" y="1.25" width="13.5" height="13.5" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+            <circle cx="8" cy="8" r="3.15" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+            <circle cx="12.15" cy="3.85" r="1" fill="currentColor"></circle>
+          </svg>
+        </a>
+      </p>
+      <p class="site-copyright">© {currentYear} Spokane Myofunctional Therapy. All rights reserved.</p>
     </footer>
   </body>
 </html>
