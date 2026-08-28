@@ -208,22 +208,22 @@ a {
   display: none;
   position: absolute;
   z-index: 2;
-  top: clamp(5rem, 16%, 7rem);
-  width: 48px;
-  height: 48px;
+  top: 50%;
+  width: 34px;
+  height: 52px;
   padding: 0 0 0.2rem;
-  border: 1px solid rgba(65, 65, 65, 0.18);
-  border-radius: 50%;
-  background: rgba(224, 224, 224, 0.68);
-  color: rgba(48, 48, 48, 0.72);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(70, 70, 70, 0.62);
   font: inherit;
-  font-size: 2.4rem;
+  font-size: 3rem;
   line-height: 1;
   cursor: pointer;
   transform: translateY(-50%);
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(2px);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .services-carousel-shell.is-ready .carousel-side-arrow {
@@ -231,15 +231,15 @@ a {
 }
 
 .carousel-side-arrow--previous {
-  left: 0.75rem;
+  left: 0.2rem;
 }
 
 .carousel-side-arrow--next {
-  right: 0.75rem;
+  right: 0.2rem;
 }
 
 .carousel-side-arrow:hover {
-  background: rgba(198, 198, 198, 0.86);
+  background: transparent;
   color: rgba(30, 30, 30, 0.9);
 }
 
@@ -328,16 +328,16 @@ a {
   }
 
   .carousel-side-arrow {
-    width: 42px;
-    height: 42px;
-    font-size: 2rem;
+    width: 30px;
+    height: 48px;
+    font-size: 2.6rem;
   }
 
   .carousel-side-arrow--previous {
-    left: 0.35rem;
+    left: 0.1rem;
   }
 
   .carousel-side-arrow--next {
-    right: 0.35rem;
+    right: 0.1rem;
   }
 }
