@@ -281,6 +281,29 @@ a {
   margin: 0;
 }
 
+.footer-facebook-link {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  color: #1877f2;
+}
+
+.footer-facebook-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer-facebook-link:hover {
+  color: #0d5fca;
+}
+
+.footer-facebook-link:focus-visible {
+  outline: 3px solid var(--bright-green);
+  outline-offset: 3px;
+}
+
 .site-copyright {
   flex-basis: 100%;
   text-align: center;
