@@ -230,6 +230,38 @@ a {
   display: grid;
 }
 
+.carousel-dots {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 0.75rem;
+  left: 50%;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(239, 241, 242, 0.72);
+  transform: translateX(-50%);
+  backdrop-filter: blur(2px);
+}
+
+.services-carousel-shell.is-ready .carousel-dots {
+  display: flex;
+}
+
+.carousel-dots button {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 2px solid rgba(98, 6, 116, 0.78);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carousel-dots button[aria-current="true"] {
+  background: var(--purple);
+}
+
 .carousel-side-arrow--previous {
   left: 0.2rem;
 }
@@ -244,6 +276,7 @@ a {
 }
 
 .carousel-side-arrow:focus-visible,
+.carousel-dots button:focus-visible,
 .services-carousel:focus-visible {
   outline: 3px solid var(--bright-green);
   outline-offset: 3px;

@@ -51,6 +51,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       data-carousel-next
       aria-label="Next card"
     >›</button>
+    <div class="carousel-dots" aria-label="Choose an information card">
+      <button type="button" data-carousel-dot="0" aria-label="Show About Me" aria-current="true"></button>
+      <button type="button" data-carousel-dot="1" aria-label="Show What is OMT"></button>
+      <button type="button" data-carousel-dot="2" aria-label="Show Littles"></button>
+      <button type="button" data-carousel-dot="3" aria-label="Show Kiddos"></button>
+      <button type="button" data-carousel-dot="4" aria-label="Show Adults"></button>
+    </div>
 
     <div
       class="services-carousel"
@@ -130,6 +137,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     const cards = Array.from(shell.querySelectorAll<HTMLElement>("[data-carousel-card]"));
     const previous = shell.querySelector<HTMLButtonElement>("[data-carousel-previous]");
     const next = shell.querySelector<HTMLButtonElement>("[data-carousel-next]");
+    const dots = Array.from(shell.querySelectorAll<HTMLButtonElement>("[data-carousel-dot]"));
 
     if (!carousel || !previous || !next || cards.length === 0) return;
 
@@ -152,11 +160,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         return distance < closestDistance ? index : closestIndex;
       }, 0);
 
+      dots.forEach((dot, index) => {
+        if (index === activeIndex) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
       updateQueued = false;
     };
 
     previous.addEventListener("click", () => showCard(activeIndex - 1));
     next.addEventListener("click", () => showCard(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => showCard(index)));
     carousel.addEventListener("scroll", () => {
       if (updateQueued) return;
       updateQueued = true;
