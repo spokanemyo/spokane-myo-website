@@ -146,8 +146,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       card.getBoundingClientRect().left - carousel.getBoundingClientRect().left + carousel.scrollLeft;
 
     const showCard = (index: number) => {
-      const boundedIndex = Math.max(0, Math.min(cards.length - 1, index));
-      carousel.scrollTo({ left: cardLeft(cards[boundedIndex]), behavior: "smooth" });
+      const wrappedIndex = (index + cards.length) % cards.length;
+      carousel.scrollTo({ left: cardLeft(cards[wrappedIndex]), behavior: "smooth" });
     };
 
     const updatePosition = () => {
@@ -159,8 +159,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       }, 0);
 
       current.textContent = String(activeIndex + 1);
-      previous.disabled = activeIndex === 0;
-      next.disabled = activeIndex === cards.length - 1;
       dots.forEach((dot, index) => {
         if (index === activeIndex) dot.setAttribute("aria-current", "true");
         else dot.removeAttribute("aria-current");

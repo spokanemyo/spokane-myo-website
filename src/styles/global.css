@@ -185,8 +185,12 @@ a {
   overscroll-behavior-inline: contain;
   scroll-behavior: smooth;
   scroll-snap-type: inline mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: var(--soft-purple) transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.services-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .services-carousel > .swipe-card {
